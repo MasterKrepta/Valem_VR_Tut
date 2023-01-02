@@ -11,11 +11,13 @@ public class ActivateTeleportRay : MonoBehaviour
 
     public InputActionProperty rightActivate;
 
+    public InputActionProperty leftCancel;
+    public InputActionProperty rightCancel;
 
     // Update is called once per frame
     void Update()
     {
-        if ((rightActivate.action.ReadValue<float>() > 0.1f))
+        if ((rightCancel.action.ReadValue<float>() == 0 && rightActivate.action.ReadValue<float>() > 0.1f))
         {
             rayInteractor.enabled = true;
         }
